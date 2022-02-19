@@ -1,0 +1,9 @@
+/venv
+.idea
+.idea/*
+.mypycache
+/App/migrations/*
+/App/__pycache__/*
+/firstDjango/__pycache__/*
+db.sqlite3
+media
