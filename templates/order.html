@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}MENU{% endblock title %}
+{% block content %}
+<h1>
+    Place Your Order Here:
+</h1>
+<form action="../thankyou/" method="POST">
+    {% csrf_token %}
+    <div>
+        <h3>What pizza foundation?</h3>
+        {% for pizza in pizzas %}
+                <label for="{{ pizza.name }}">{{ pizza.name }}</label>
+                <input type="number" name="{{ pizza.name }}" id="{{ pizza.name }}" max="10">
+                <br>
+        {% endfor %}
+    </div>
+    <div>
+        <h3>What toppings?</h3>
+        {% for topping in toppings %}
+                <label for="{{ topping.name }}">{{ topping.name }}</label>
+                <input type="checkbox" name="{{ topping.name }}" id="{{ topping.name }}">
+                <br>
+        {% endfor %}
+    </div>
+    <div>
+        <input type="submit" value="Submit order">
+    </div>
+</form>
+{% endblock content %}

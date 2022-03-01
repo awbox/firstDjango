@@ -20,9 +20,12 @@ from django.contrib import admin
 from django.urls import path
 
 # project apps import
-from App.views import our_view
+from App.views import our_view, jakikolwiek_widok, order, saved_order
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('<str:name>/', our_view),
+    path('', our_view),
+    path('nowy/', jakikolwiek_widok),
+    path('order/', order),
+    path('thankyou/', saved_order)
 ]

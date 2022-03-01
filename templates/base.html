@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Strona Główna{% endblock title %}</title>
+    {% block stylesheets %}
+<!--    tu będą dodawane stylesheety -->
+    {% endblock stylesheets %}
+</head>
+<body>
+        <div class="navbar">
+        {% block navbar %}
+        {% endblock navbar %}
+    </div>
+    <div class="content">
+        {% block content %}
+            <h1>
+                {{ widoczne_url }}
+
+                {{ name }}
+            </h1>
+            <h1>
+                {{ widoczne_url2 }}
+            </h1>
+            <h1>
+                {{ widoczne_url3 }}
+            </h1>
+            <ul>
+                {% for number in lotto reversed %}
+                    <li>
+                        {{ number }}
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endblock content %}
+    </div>
+    <div class="footer">
+        {% block footer %}
+
+        {% endblock footer %}
+    </div>
+</body>
+</html>
